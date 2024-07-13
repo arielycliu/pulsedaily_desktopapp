@@ -1,7 +1,7 @@
 const { app, BrowserWindow } = require('electron');
 const { ipcMain } = require('electron');
 const schedule = require('node-schedule');
-const path = require('node:path');
+const path = require('path');
 
 const AutoLaunch = require('auto-launch');
 const autoLauncher = new AutoLaunch({
@@ -48,12 +48,12 @@ const createPopup = () => {
         modal: true,
         show: false,
         webPreferences: {
-            preload: path.join(__dirname, 'popup/preloadPopup.js')
+            preload: path.join(__dirname, 'popup', 'preloadPopup.js')
         },
         icon: path.join(__dirname, 'images', 'icon.ico')
     });
     let modal = emailPopup;
-    modal.loadFile("src/popup/popup.html");
+    modal.loadFile(path.join(__dirname, 'popup', 'popup.html'));
     modal.once('ready-to-show', () => {
         modal.show();
     });
@@ -101,9 +101,6 @@ app.on('window-all-closed', () => {
     }
 });
 
-// In this file you can include the rest of your app's specific main process
-// code. You can also put them in separate files and import them here.
-
 ipcMain.handle("startMain", async (event, response) => {
     createWindow();
 });
@@ -131,7 +128,6 @@ ipcMain.handle("registerEmployee", async (event, email) => {
     return data
 });
 
-// call apis in main since we have access to nodejs apis here
 ipcMain.handle("callQuoteApi", async () => {
     const response = await fetch('https://zenquotes.io/api/random');
     const data = await response.json();
@@ -169,7 +165,6 @@ ipcMain.handle("callPostResponseApi", async (event, ratings, details) => {
         rating: ratings,
         details: details
     };
-
     const response = await fetch('https://xzrnwqkv35.execute-api.us-east-1.amazonaws.com/respond', {
         method: 'POST',
         headers: {
