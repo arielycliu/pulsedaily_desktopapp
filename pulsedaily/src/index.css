@@ -1,0 +1,119 @@
+body {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  margin: 0px;
+  background-color: #F3E7D0;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  gap: 0px;
+  overflow: hidden;
+}
+
+h1 {
+  font-size: 1.5rem;
+}
+
+h2 {
+  font-size: 1.2rem;
+}
+
+label {
+  margin-bottom: 0.5rem;
+}
+
+input,
+textarea {
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+}
+input {
+  border: 0.5px solid black;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size: 1rem;
+}
+
+.main-content,
+.quote-content,
+.logo-content {
+  padding: 2rem;
+}
+.logo-content {
+  flex-grow: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 1rem;
+}
+.quote-content {
+  flex-grow: 0;
+  margin-top: 0.5rem;
+  padding-top: 0rem;
+}
+.main-content {
+  flex: 5;
+  background-color: rgba(255, 255, 255, 0.5);;
+  border-radius: 1.2rem 1.2rem 0px 0px;
+  padding-top: 1.5rem;
+}
+
+.logo {
+  width: 70%;
+  max-width: 400px;
+  height: auto;
+}
+
+.form-group {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.ratings {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+}
+.ratings label {
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  align-items: center;
+  gap: 0.7rem;
+}
+.ratings input[type="radio"] {
+  transform: scale(1.5); 
+}
+
+.button-div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin-top: 1rem;
+}
+
+#submitBtn {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size: 0.9rem;
+  background-color: "#695D48";
+  color: "white";
+  padding: 10px 15px;
+  border-radius: 20px;
+  border: 0px solid black;
+  width: fit-content;
+  margin-bottom: 1rem;
+}
+#submitBtn:hover {
+  cursor: pointer;
+}
+
+#quote,
+#quote-author {
+  font-style: italic;
+  margin-top: 0px;
+  margin-bottom: 0.4rem;
+}
+
+/* Attributes unique to popup */
+#message {
+  padding-top: 1rem;
+}
