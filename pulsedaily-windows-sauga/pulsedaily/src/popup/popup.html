@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>PulseDaily</title>
+    <link rel="stylesheet" href="../index.css" />
+    <script src="popup.js"></script>
+</head>
+
+<body>
+    <div class="logo-content"> 
+        <object type="image/svg+xml" data="../images/pulsedailylogo.svg" class="logo">
+            Your browser does not support SVG
+        </object>
+    </div>
+    <div class="main-content">
+        <h1>Welcome to PulseDaily</h1>
+        <div id="email-form">
+            <div class="form-group">
+                <label for="email">Please enter your work email address</label>
+                <p>This is only for organization identification reasons. Your anonymity will be protected.</p>
+                <input id="email" name="email"></input>
+            </div>
+        </div>
+        <div class="button-div">
+            <button 
+                id="submitBtn" 
+                style="background-color: black; color: white" 
+                onkeydown="preventEnterClear(event);"
+                onclick="registerEmployee();"
+            >Submit</button>
+        </div>
+        <p id="message"></p>
+    </div>
+</body>
+
+</html>
